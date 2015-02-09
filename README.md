@@ -74,7 +74,7 @@ This returns
 And finally, I can make selections based on the entries. For example
 
 ```sql
-SELECT DogBreed,AverageHeight FROM Dogs WHERE AverageHeight>20;
+SELECT DogBreed,AverageHeight FROM Dogs WHERE AverageHeight>30;
 ```
 returns
 
