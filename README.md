@@ -21,7 +21,7 @@ SQL (Structured Query Language) is a language used to handle data stored in a da
 
 This table stored a list of dog breeds, their IDs and their average heights (in cm). 
 
-I will be using [this on line SQL interpreter](http://kripken.github.io/sql.js/GUI/) during the tutorial.
+I will be using [this online SQL interpreter](http://kripken.github.io/sql.js/GUI/) during the tutorial.
 
 If we wanted to create this table in SQL, we would use the `CREATE TABLE` SQL statement.
 
@@ -118,7 +118,12 @@ Once we have the database set up, we can send it SQL commands.
     toDoDB.execSQL("CREATE TABLE IF NOT EXISTS ToDoItems( Items varchar(100));");
 ```
 
-There is some new SQL here, the `IF NOT EXISTS` simply tells to database that if the table already exists then don't bother creating it. 
+There is some new SQL here, the `IF NOT EXISTS` simply tells to database that if the table already exists then don't bother creating it. Let's also put a character limit on our input. 100, since that's the size of our database field. In the EditText tag of `res/layout/activity_add_todo_item.xml`
+
+```xml
+android:maxLength="100"
+```
+
 
 Now we want to grab all the to-do items in the database and add them to our `ArrayAdapter` so they show up in our app.
 
@@ -225,7 +230,7 @@ Inside our `onCreate`, we add
 
 Inside the onItemClick method, we need to first grab the item we are going to delete. Notice that one of the parameters for `onItemClick` is the view that has the text in it, so we can grab the text from it's child view.
 
-First we add an id to the TextView in `res/layout/todo_item.xml` so that we can refer to it
+First we add an id to the TextView in `res/layout/todo_item.xml` so that we can refer to it. 
 
 ```xml
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -233,7 +238,8 @@ First we add an id to the TextView in `res/layout/todo_item.xml` so that we can 
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="5dp"
-    android:textSize="18dp"/>
+    android:textSize="18dp"
+    android:maxLength="100"/>
 ```
 
 Then we grab it in our code

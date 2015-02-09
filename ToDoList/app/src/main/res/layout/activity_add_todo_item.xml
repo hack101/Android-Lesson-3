@@ -19,7 +19,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_todo_text"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10dp"
+        android:maxLength="100"/>
 
     <Button android:id="@+id/todo_button"
         android:layout_marginTop="30dp"
