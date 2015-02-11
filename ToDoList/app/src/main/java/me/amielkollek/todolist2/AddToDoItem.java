@@ -36,6 +36,7 @@ public class AddToDoItem extends ActionBarActivity {
                             toDoDB.execSQL(sql);
                         }
                         startActivity(intent);
+                        finish();
                     }
                 }
         );
