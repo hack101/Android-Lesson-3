@@ -3,7 +3,7 @@
 ## Saving Data ##
 ----------------------------------
 
-In this tutorial we will picking up where we left off last time with our to-do list and add saved data. If you recall, our app so far only appears to be a to-do list, but the items in the list are always the same, and users cannot add to them.
+In this tutorial we will be picking up where we left off last time with our to-do list and add saved data. If you recall, our app so far only appears to be a to-do list, but the items in the list are always the same, and users cannot add to them.
 
 To save data, we will create a database on the phone. Before we can add this database to our app, we need to learn how to use a database.
 
@@ -135,7 +135,7 @@ We use an object called a cursor to access the items in our database. You can th
         Cursor items = toDoDB.rawQuery("SELECT Items FROM ToDoItems",null);
 ```
 
-We can now access the items though the query. We move our cursor to the beginning of the table, and pick of each item, storing it in a list. In the end our method looks like this:
+We can now access the items through the query. We move our cursor to the beginning of the table, and pick off each item, storing it in a list. In the end our method looks like this:
 
 ```java
     public ArrayList<String> getToDoItems(){
@@ -182,7 +182,7 @@ We'll also override the `onResume` method so that we can have the list refresh w
     }
 ```
 
-Great, no we're all set to add items to our to-do list!
+Great, now we're all set to add items to our to-do list!
 
 ### Adding Items
 
@@ -293,7 +293,7 @@ Then, we refresh our list
     todoListAdapter.addAll(getToDoItems());
 ```
 
-We can leave our negative button method blank, so noting happens. And that's it! Users can now create and delete items from their todo list!
+We can leave our negative button method blank, so nothing happens. And that's it! Users can now create and delete items from their todo list!
 
 
 
