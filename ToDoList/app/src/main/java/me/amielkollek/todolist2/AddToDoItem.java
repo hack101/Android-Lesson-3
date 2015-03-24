@@ -1,6 +1,5 @@
 package me.amielkollek.todolist2;
 
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -10,15 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-
 public class AddToDoItem extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_todo_item);
-
-        final Intent intent = new Intent(this, MainActivity.class);
 
         Button addButton = (Button) findViewById(R.id.todo_button);
 
@@ -35,7 +31,6 @@ public class AddToDoItem extends ActionBarActivity {
                             SQLiteDatabase toDoDB = openOrCreateDatabase("ToDoListDB.db", MODE_PRIVATE, null);
                             toDoDB.execSQL(sql);
                         }
-                        startActivity(intent);
                         finish();
                     }
                 }
